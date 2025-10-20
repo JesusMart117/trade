@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tradelink</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-[#f5f9fc] text-gray-800 font-sans">
+
+    <!-- Encabezado -->
+    <header class="fixed top-0 left-0 w-full z-50 bg-[rgba(0,65,130,0.9)] text-white shadow-md">
+        <div class="container mx-auto flex justify-between items-center px-4 py-4">
+            <!-- Logo y título -->
+            <div class="flex items-center gap-3">
+                <img src="./img/LOGO BANNER.png" alt="Logo Tradelink" class="w-10 h-10 rounded-full">
+                <h1 class="text-2xl font-bold tracking-wide">TRADELINK</h1>
+            </div>
+
+            <!-- Botón menú (solo móvil) -->
+            <input type="checkbox" id="menu-toggle" class="hidden peer">
+            <label for="menu-toggle" class="cursor-pointer md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m0 6H4" />
+                </svg>
+            </label>
+
+            <!-- Menú con navegación funcional -->
+            <nav
+                class="absolute top-full right-0 w-full bg-[rgba(0,65,130,0.95)] transition-all duration-300 max-h-0 overflow-hidden peer-checked:max-h-96 md:static md:max-h-none md:w-auto md:bg-transparent md:flex md:items-center">
+                <ul class="flex flex-col md:flex-row text-center md:text-left gap-4 md:gap-6 py-4 md:py-0">
+                    <li><a href="#home" class="hover:text-[#00a0e3] transition">Home</a></li>
+                    <li><a href="#acerca" class="hover:text-[#00a0e3] transition">Acerca de</a></li>
+                    <li><a href="#servicios" class="hover:text-[#00a0e3] transition">Servicios</a></li>
+                    <li><a href="#clientes" class="hover:text-[#00a0e3] transition">Clientes</a></li>
+                    <li><a href="#contacto" class="hover:text-[#00a0e3] transition">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <!-- Slider de fondo -->
+    <section id="home" class="relative h-screen w-full overflow-hidden text-white flex items-center justify-end">
+        <!-- Imágenes de fondo (se rotan con JS) -->
+        <div id="slider-images"
+            class="absolute top-0 left-0 w-full h-full bg-cover bg-center transition-all duration-1000"
+            style="background-image: url('./img/carrito.jpg');">
+        </div>
+
+        <!-- Capa de oscurecimiento -->
+        <div class="absolute top-0 left-0 w-full h-full bg-[rgba(0,0,0,0.25)]"></div>
+
+        <!-- Texto -->
+        <div class="relative z-10 text-right pr-16 max-w-3xl">
+            <h2 class="text-5xl md:text-6xl font-bold leading-tight drop-shadow-lg">
+                Soluciones integrales en<br>
+                comercio, logística, consultoría<br>
+                y marketing, adaptadas a las<br>
+                necesidades de tu negocio.
+            </h2>
+        </div>
+    </section>
+
+    <!-- Script del slider -->
+    <script>
+        // Imágenes del slider
+        const imagenes = [
+            "./img/carrito2.png",
+            "./img/empleada.png",
+            "./img/carrito-computadora.png"
+        ];
+
+        let actual = 0;
+        const sliderImages = document.getElementById("slider-images");
+
+        // Cambia de imagen cada 5 segundos
+        setInterval(() => {
+            actual = (actual + 1) % imagenes.length;
+            sliderImages.style.backgroundImage = `url('${imagenes[actual]}')`;
+        }, 3000);
+    </script>
+
+    <!-- Sección principal -->
+    <section id="acerca" class="bg-white w-full rounded-2xl shadow-lg p-10 flex flex-wrap items-center gap-8 mx-auto">
+        <!-- Imagen -->
+        <img src="./img/MARCO-DE-FOTO.png" alt="Imagen consultoría" class="md:w-96" rounded-lg bg-[#dcefff]" />
+
+        <!-- Contenido de texto -->
+        <div class="flex-1">
+            <h3 class="text-[#00a0e3] text-2xl md:text-3xl mb-2 font-medium">
+                "TU ALIADO ESTRATÉGICO EN COMERCIO Y LOGÍSTICA"
+            </h3>
+
+            <h3 class="text-[#004182] text-3xl md:text-4xl mb-4 font-semibold leading-snug">
+                La mejor empresa como aliado estratégico confiable,
+                innovador y versátil para su negocio
+            </h3>
+
+            <p class="text-gray-800 text-lg md:text-xl leading-relaxed mb-4">
+                La mejor empresa como aliado estratégico confiable, innovador y versátil, para su negocio.
+            </p>
+
+            <p class="text-gray-700 text-xl md:text-xl leading-relaxed">
+                Somos una organización con un objeto social amplio, orientada a brindar servicios integrales en
+                comercio, logística, consultoría empresarial, mercadotecnia y desarrollo corporativo. Nuestra misión
+                es ofrecer a empresas y emprendedores un acompañamiento estratégico que les permita optimizar
+                procesos, expandir sus operaciones y alcanzar una posición sólida en mercados nacionales e
+                internacionales.
+            </p>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="text-center mt-0 mx-auto px-4 py-16 bg-[#e8f5ff]">
+        <h2 class="text-[#004182] text-4xl md:text-5xl mb-6 font-extrabold">
+            NUESTROS SERVICIOS
+        </h2>
+        <h3 class="text-[#00a0e3] text-2xl md:text-3xl mb-10 font-semibold">
+            Soluciones empresariales y profesionales
+        </h3>
+
+        <div id="servicios" class="flex flex-wrap justify-center gap-8">
+            <!-- Servicio -->
+            <div data-info="financiera"
+                class="servicio-card relative group bg-white w-56 p-6 rounded-xl shadow-md hover:-translate-y-2 transform transition cursor-pointer">
+                <img src="./img/68d098eaa867952e96693f0e_IS 1A.png" alt="Icono comercio exterior"
+                    class="w-16 h-16 mx-auto mb-4" />
+                <p class="text-[#004182] font-bold">
+                    GESTIÓN FINANCIERA Y LEGAL
+                </p>
+            </div>
+
+            <div data-info="logistica"
+                class="servicio-card relative group bg-white w-56 p-6 rounded-xl shadow-md hover:-translate-y-2 transform transition cursor-pointer">
+                <img src="./img/68d098ea01b87fa6a26fa33a_IS 2A.png" alt="Icono logística integral"
+                    class="w-16 h-16 mx-auto mb-4" />
+                <p class="text-[#004182] font-bold">
+                    TRANSPORTE Y LOGÍSTICA
+                </p>
+            </div>
+
+            <div data-info="aduanas"
+                class="servicio-card relative group bg-white w-56 p-6 rounded-xl shadow-md hover:-translate-y-2 transform transition cursor-pointer">
+                <img src="./img/68d098ea32406c818ec6a592_IS 4A.png" alt="Icono consultoría financiera"
+                    class="w-16 h-16 mx-auto mb-4" />
+                <p class="text-[#004182] font-bold">
+                    COMERCIO EXTERIOR Y ADUANAS
+                </p>
+            </div>
+
+            <div data-info="distribucion"
+                class="servicio-card relative group bg-white w-56 p-6 rounded-xl shadow-md hover:-translate-y-2 transform transition cursor-pointer">
+                <img src="./img/68d0a2b27a6cbec1fe0f6f0a_IS 3A.png" alt="Icono marketing estratégico"
+                    class="w-16 h-16 mx-auto mb-4" />
+                <p class="text-[#004182] font-bold">
+                    COMERCIO Y DISTRIBUCIÓN
+                </p>
+            </div>
+
+            <div data-info="marketing"
+                class="servicio-card relative group bg-white w-56 p-6 rounded-xl shadow-md hover:-translate-y-2 transform transition cursor-pointer">
+                <img src="./img/68d098ead913fc58d6582869_IS 5A.png" alt="Icono marketing estratégico"
+                    class="w-16 h-16 mx-auto mb-4" />
+                <p class="text-[#004182] font-bold">
+                    PUBLICIDAD Y MARKETING
+                </p>
+            </div>
+
+            <div data-info="eventos"
+                class="servicio-card relative group bg-white w-56 p-6 rounded-xl shadow-md hover:-translate-y-2 transform transition cursor-pointer">
+                <img src="./img/68d098ea161115b079519424_IS 7A.png" alt="Icono marketing estratégico"
+                    class="w-16 h-16 mx-auto mb-4" />
+                <p class="text-[#004182] font-bold">
+                    EVENTOS Y RELACIONES PÚBLICAS
+                </p>
+            </div>
+        </div>
+
+        <!-- Slider inferior dinámico -->
+        <section id="slider-info"
+            class="mt-10 bg-white/40 rounded-2xl p-10 flex flex-wrap items-center gap-10 mx-auto transition-all duration-500 opacity-0 pointer-events-none max-w-6xl">
+            <img id="slider-img" src="./img/puerquito.png" alt="Imagen"
+                class="w-full md:w-96 rounded-lg bg-[#dcefff]" />
+            <div class="flex-1 text-left">
+                <h3 id="slider-title" class="text-[#004182] text-2xl mb-4 font-semibold">
+                    CONSULTORÍA FINANCIERA
+                </h3>
+                <p id="slider-text" class="text-gray-800 leading-relaxed">
+                    Contamos con especialistas en asesoría financiera, administración de riesgos, evaluación de
+                    inversiones y
+                    desarrollo de estrategias de crecimiento para optimizar los recursos de tu empresa.
+                </p>
+            </div>
+        </section>
+    </section>
+
+    <script>
+        const infoData = {
+            financiera: {
+                title: "CONSULTORÍA FINANCIERA",
+                text: "Asesoría en comercio exterior, finanzas, estudios de mercado, representación legal y gestión de créditos empresariales.",
+                img: "./img/puerquito.png",
+                titleSize: "text-2xl", // 🔹 Tamaño del título
+                textSize: "text-xl", // 🔹 Tamaño del texto
+            },
+            logistica: {
+                title: "TRANSPORTE Y LOGÍSTICA",
+                text: "Soluciones integrales para transporte nacional e internacional, gestión de almacenes y optimización de rutas.",
+                img: "./img/camion.png",
+                titleSize: "text-2xl",
+                textSize: "text-xl",
+            },
+            aduanas: {
+                title: "COMERCIO EXTERIOR Y ADUANAS",
+                text: "Gestión de trámites aduanales, asesoría en tratados internacionales y cumplimiento normativo de importación/exportación.",
+                img: "./img/contenedorpng.png",
+                titleSize: "text-2xl",
+                textSize: "text-xl",
+            },
+            distribucion: {
+                title: "COMERCIO Y DISTRIBUCIÓN",
+                text: "Desarrollo de canales de venta, distribución nacional e internacional y posicionamiento comercial.",
+                img: "./img/contenedorpng.png",
+                titleSize: "text-2xl",
+                textSize: "text-xl",
+            },
+            marketing: {
+                title: "PUBLICIDAD Y MARKETING",
+                text: "Campañas digitales, branding, diseño gráfico, posicionamiento SEO y comunicación multicanal.",
+                img: "./img/junta.png",
+                titleSize: "text-2xl",
+                textSize: "text-xl",
+            },
+            eventos: {
+                title: "EVENTOS Y RELACIONES PÚBLICAS",
+                text: "Organización de eventos corporativos, networking empresarial y gestión de patrocinios.",
+                img: "./img/empleado.png",
+                titleSize: "text-2xl",
+                textSize: "text-xl",
+            },
+        };
+
+        const servicioCards = document.querySelectorAll(".servicio-card");
+        const slider = document.getElementById("slider-info");
+        const title = document.getElementById("slider-title");
+        const text = document.getElementById("slider-text");
+        const img = document.getElementById("slider-img");
+
+        servicioCards.forEach((card) => {
+            const key = card.dataset.info;
+            card.addEventListener("mouseenter", () => mostrarInfo(key));
+            card.addEventListener("click", () => mostrarInfo(key)); // Soporte móvil
+        });
+
+        function mostrarInfo(key) {
+            const info = infoData[key];
+            title.textContent = info.title;
+            text.textContent = info.text;
+            img.src = info.img;
+
+            // 🔹 Actualiza tamaño dinámicamente
+            title.className = `text-[#004182] font-semibold mb-4 ${info.titleSize}`;
+            text.className = `text-gray-800 leading-relaxed ${info.textSize}`;
+
+            // 🔹 Animación de aparición
+            slider.classList.remove("opacity-0", "pointer-events-none");
+            slider.classList.add("opacity-100");
+        }
+    </script>
+
+
+
+
+    <!-- Clientes -->
+    <section id="clientes" class="text-center py-20 bg-white w-full">
+        <h2 class="text-[#004182] text-4xl mb-12 font-bold tracking-wide">
+            NUESTROS CLIENTES
+        </h2>
+
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-10 px-8 md:px-20">
+            <!-- Cliente 1 -->
+            <a href="https://www.cancun.gob.mx/home" target="_blank" rel="noopener noreferrer" class="block group">
+                <img src="./img/68d0a650fd4c29259397a121_C1C.png" alt="Municipio"
+                    class="w-full max-w-[180px] mx-auto opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 ease-in-out drop-shadow-md" />
+            </a>
+
+            <!-- Cliente 2 -->
+            <a href="https://reng.com.mx/" target="_blank" rel="noopener noreferrer" class="block group">
+                <img src="./img/68d0a650715c07a955652b5e_C2C.png" alt="Rotolainer"
+                    class="w-full max-w-[180px] mx-auto opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 ease-in-out drop-shadow-md" />
+            </a>
+
+            <!-- Cliente 3 -->
+            <a href="https://www.imperquimia.mx/" target="_blank" rel="noopener noreferrer" class="block group">
+                <img src="./img/IPERQUIMIA.png" alt="Imperquimia"
+                    class="w-full max-w-[180px] mx-auto opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 ease-in-out drop-shadow-md" />
+            </a>
+
+            <!-- Cliente 4 -->
+            <a href="https://icasaingenieria.com/" target="_blank" rel="noopener noreferrer" class="block group">
+                <img src="./img/ICAZA.png" alt="ICAZA"
+                    class="w-full max-w-[180px] mx-auto opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 ease-in-out drop-shadow-md" />
+            </a>
+
+            <!-- Cliente 5 -->
+            <a href="https://www.ldc.com" target="_blank" rel="noopener noreferrer" class="block group">
+                <img src="./img/LDC.png" alt="LDC"
+                    class="w-full max-w-[180px] mx-auto opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-300 ease-in-out drop-shadow-md" />
+            </a>
+        </div>
+    </section>
+
+    <!-- SECCIÓN: mapa + formulario -->
+    <section id="contacto" class="min-h-screen flex items-stretch">
+        <!-- Columna Izquierda: Mapa -->
+        <div class="w-full lg:w-1/2 h-96 lg:h-auto relative">
+            <div id="map" class="absolute inset-0"></div>
+            <!-- control flotante para dirección (opcional) -->
+            <div class="absolute left-4 top-4 bg-white/80 backdrop-blur-sm rounded-md shadow-md p-3 z-20 max-w-xs">
+                <p class="text-sm font-semibold">Encuéntranos</p>
+                <p class="text-xs text-gray-700">Av. Ejemplo 123, Ciudad, País</p>
+            </div>
+        </div>
+
+        <!-- Columna Derecha: Formulario (sidebar) -->
+        <aside id="sidebar" class="w-full lg:w-1/2 relative flex items-center">
+            <!-- Capa azul semitransparente similar a la imagen -->
+            <div class="absolute inset-0 bg-blue-900/85"></div>
+
+            <div class="relative z-10 w-full px-6 py-12 lg:py-20 lg:px-16 text-white">
+                <h3 class="text-2xl font-bold mb-4">TU ÉXITO ES NUESTRA MISIÓN</h3>
+                <p class="mb-6 text-sm opacity-90">Registra tus datos para contactar con nuestro equipo. Responderemos a
+                    la brevedad.</p>
+
+                <form id="clientForm" class="space-y-4" novalidate>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="nombre" class="block text-sm font-medium">Nombre completo</label>
+                            <input id="nombre" name="nombre" required type="text"
+                                class="mt-1 block w-full rounded-md border border-transparent px-3 py-2 text-gray-900"
+                                placeholder="Ej. Juana Pérez" />
+                            <p class="mt-1 text-xs text-red-300 hidden" id="err-nombre">Ingresa tu nombre.</p>
+                        </div>
+
+                        <div>
+                            <label for="empresa" class="block text-sm font-medium">Empresa (opcional)</label>
+                            <input id="empresa" name="empresa" type="text"
+                                class="mt-1 block w-full rounded-md border border-transparent px-3 py-2 text-gray-900"
+                                placeholder="Nombre de la empresa" />
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="email" class="block text-sm font-medium">Correo electrónico</label>
+                            <input id="email" name="email" required type="email"
+                                class="mt-1 block w-full rounded-md border border-transparent px-3 py-2 text-gray-900"
+                                placeholder="correo@ejemplo.com" />
+                            <p class="mt-1 text-xs text-red-300 hidden" id="err-email">Correo inválido.</p>
+                        </div>
+
+                        <div>
+                            <label for="telefono" class="block text-sm font-medium">Teléfono</label>
+                            <input id="telefono" name="telefono" type="tel"
+                                class="mt-1 block w-full rounded-md border border-transparent px-3 py-2 text-gray-900"
+                                placeholder="+52 1 55 5555 5555" />
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="mensaje" class="block text-sm font-medium">Mensaje / Requerimiento</label>
+                        <textarea id="mensaje" name="mensaje" rows="4"
+                            class="mt-1 block w-full rounded-md border border-transparent px-3 py-2 text-gray-900"
+                            placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+                    </div>
+
+                    <!-- Inputs ocultos para coordenadas seleccionadas en el mapa -->
+                    <input type="hidden" id="lat" name="lat" />
+                    <input type="hidden" id="lng" name="lng" />
+
+                    <div class="flex items-center gap-3">
+                        <button type="submit"
+                            class="inline-flex items-center justify-center px-5 py-3 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-md shadow">
+                            Enviar registro
+                        </button>
+
+                        <button id="btnUseMapLocation" type="button"
+                            class="px-4 py-3 border border-white/20 rounded-md text-sm text-white/90 hover:bg-white/5">
+                            Usar mi ubicación en el mapa
+                        </button>
+                    </div>
+
+                    <p id="formFeedback" class="text-sm mt-2 hidden"></p>
+                </form>
+            </div>
+        </aside>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="wave-bg bg-blue-500 text-white">
+        <div class="max-w-7xl mx-auto px-6 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+                <div>
+                    <!-- Logo simple -->
+                    <div class="flex items-center gap-3 mb-4">
+                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center font-bold">T
+                        </div>
+                        <div>
+                            <div class="font-bold">TRADELINK</div>
+                            <div class="text-xs opacity-90">Comercio • Logística • Consultoría</div>
+                        </div>
+                    </div>
+                    <p class="text-sm opacity-90">Soluciones integrales adaptadas a las necesidades de tu negocio.</p>
+                </div>
+
+                <div class="text-sm">
+                    <h4 class="font-semibold mb-2">Contáctanos</h4>
+                    <p class="text-xs">Tel: +52 55 5555 5555</p>
+                    <p class="text-xs">Email: info@tradelink.com</p>
+                    <p class="text-xs mt-2">Av. Ejemplo 123, Ciudad, País</p>
+                </div>
+
+                <div class="text-sm">
+                    <h4 class="font-semibold mb-2">Horario</h4>
+                    <p class="text-xs">Lun - Vie: 9:00 - 18:00</p>
+                    <p class="text-xs">Sáb: 9:00 - 14:00</p>
+                    <p class="text-xs mt-2">&copy; <span id="year"></span> Tradelink. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Footer: año dinámico
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Form handling (frontend-only demo)
+        const form = document.getElementById('clientForm');
+        const feedback = document.getElementById('formFeedback');
+
+        function validateEmail(email) {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+        }
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            // campos
+            const nombre = document.getElementById('nombre');
+            const email = document.getElementById('email');
+            const telefono = document.getElementById('telefono');
+            const empresa = document.getElementById('empresa');
+            const mensaje = document.getElementById('mensaje');
+            const lat = document.getElementById('lat').value;
+            const lng = document.getElementById('lng').value;
+
+            // simple validaciones
+            let ok = true;
+            document.getElementById('err-nombre').classList.add('hidden');
+            document.getElementById('err-email').classList.add('hidden');
+
+            if (!nombre.value.trim()) {
+                document.getElementById('err-nombre').classList.remove('hidden');
+                ok = false;
+            }
+            if (!validateEmail(email.value)) {
+                document.getElementById('err-email').classList.remove('hidden');
+                ok = false;
+            }
+
+            if (!ok) return;
+
+            const payload = {
+                nombre: nombre.value.trim(),
+                email: email.value.trim(),
+                telefono: telefono.value.trim(),
+                empresa: empresa.value.trim(),
+                mensaje: mensaje.value.trim(),
+                lat: lat || null,
+                lng: lng || null,
+                fecha: new Date().toISOString()
+            };
+
+            // aquí puedes reemplazar con fetch a tu API cuando esté disponible
+            console.log('Registro (frontend-demo):', payload);
+
+            // Guardar demo en localStorage
+            const registros = JSON.parse(localStorage.getItem('registros') || '[]');
+            registros.push(payload);
+            localStorage.setItem('registros', JSON.stringify(registros));
+
+            feedback.className = 'text-sm mt-2 text-green-200';
+            feedback.textContent = 'Registro enviado correctamente (demo). Pronto nos contactaremos.';
+            feedback.classList.remove('hidden');
+
+            // limpiar form (opcional)
+            form.reset();
+        });
+
+        // Botón usar ubicación del mapa: lee la última marca (si existe) y la inserta en inputs lat/lng
+        document.getElementById('btnUseMapLocation').addEventListener('click', () => {
+            if (lastMarkerPosition) {
+                document.getElementById('lat').value = lastMarkerPosition.lat;
+                document.getElementById('lng').value = lastMarkerPosition.lng;
+                alert('Coordenadas añadidas al formulario.');
+            } else {
+                alert('Selecciona un punto en el mapa (haz click) o permite el acceso a tu ubicación.');
+            }
+        });
+
+        // MAPA: Google Maps JS
+        // Nota: reemplaza YOUR_GOOGLE_MAPS_API_KEY por tu clave real.
+        // El mapa permite:
+        // - hacer click para colocar un marcador (y guardar coords en inputs lat/lng)
+        // - usar geolocation para centrar en usuario
+        let map, marker, lastMarkerPosition = null;
+
+        function initMap() {
+            const defaultCenter = { lat: 19.432608, lng: -99.133209 }; // CDMX como ejemplo
+
+            map = new google.maps.Map(document.getElementById('map'), {
+                center: defaultCenter,
+                zoom: 13,
+                disableDefaultUI: true,
+                gestureHandling: 'auto'
+            });
+
+            // marcador al click
+            map.addListener('click', (e) => {
+                placeMarker(e.latLng);
+            });
+
+            // botón de geolocalización (HTML5)
+            const geoBtn = document.createElement('button');
+            geoBtn.textContent = '📍';
+            geoBtn.title = 'Usar mi ubicación';
+            geoBtn.className = 'bg-white/90 rounded p-2 shadow-sm';
+            geoBtn.style.margin = '8px';
+            map.controls[google.maps.ControlPosition.RIGHT_TOP].push(geoBtn);
+
+            geoBtn.addEventListener('click', () => {
+                if (navigator.geolocation) {
+                    navigator.geolocation.getCurrentPosition(position => {
+                        const pos = { lat: position.coords.latitude, lng: position.coords.longitude };
+                        map.setCenter(pos);
+                        map.setZoom(15);
+                        placeMarker(pos);
+                    }, () => {
+                        alert('No se pudo obtener la ubicación.');
+                    });
+                } else {
+                    alert('Geolocalización no soportada por este navegador.');
+                }
+            });
+        }
+
+        function placeMarker(latLng) {
+            if (marker) marker.setMap(null);
+            marker = new google.maps.Marker({
+                position: latLng,
+                map: map,
+                draggable: true,
+            });
+
+            const lat = latLng.lat ? latLng.lat() : latLng.lat;
+            const lng = latLng.lng ? latLng.lng() : latLng.lng;
+
+            lastMarkerPosition = { lat: Number(lat), lng: Number(lng) };
+            document.getElementById('lat').value = lastMarkerPosition.lat;
+            document.getElementById('lng').value = lastMarkerPosition.lng;
+
+            // actualizar coords si arrastras
+            marker.addListener('dragend', (e) => {
+                const p = e.latLng;
+                lastMarkerPosition = { lat: p.lat(), lng: p.lng() };
+                document.getElementById('lat').value = lastMarkerPosition.lat;
+                document.getElementById('lng').value = lastMarkerPosition.lng;
+            });
+        }
+    </script>
+
+    <!-- Cargar Google Maps JS (poner tu API KEY) -->
+    <!-- Reemplaza YOUR_GOOGLE_MAPS_API_KEY con tu llave -->
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap"></script>
+</body>
+
+</html>
+
+
+</body>
+
+</html>
