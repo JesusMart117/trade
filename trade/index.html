@@ -63,11 +63,18 @@
                 necesidades de tu negocio.
             </h2>
         </div>
+
+        <!-- Curva inferior -->
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+            <svg class="relative block w-[calc(100%+1.3px)] h-[120px]" xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0 C300,100 900,100 1200,0 L1200,120 L0,120 Z" fill="#ffffff"></path>
+            </svg>
+        </div>
     </section>
 
     <!-- Script del slider -->
     <script>
-        // Imágenes del slider
         const imagenes = [
             "./img/carrito2.png",
             "./img/empleada.png",
@@ -77,7 +84,6 @@
         let actual = 0;
         const sliderImages = document.getElementById("slider-images");
 
-        // Cambia de imagen cada 5 segundos
         setInterval(() => {
             actual = (actual + 1) % imagenes.length;
             sliderImages.style.backgroundImage = `url('${imagenes[actual]}')`;
@@ -87,7 +93,7 @@
     <!-- Sección principal -->
     <section id="acerca" class="bg-white w-full rounded-2xl shadow-lg p-10 flex flex-wrap items-center gap-8 mx-auto">
         <!-- Imagen -->
-        <img src="./img/marco_tradelink.png" alt="Imagen consultoría" class="md:w-96" rounded-lg bg-[#dcefff]" />
+        <img src="./img/marco_tradelink.png" alt="Imagen consultoría" class="md:w-96 rounded-lg bg-[#dcefff]" />
 
         <!-- Contenido de texto -->
         <div class="flex-1">
@@ -114,6 +120,7 @@
         </div>
     </section>
 
+
     <!-- Servicios -->
     <section id="servicios" class="text-center mt-0 mx-auto px-4 py-16 bg-[#e8f5ff]">
         <h2 class="text-[#004182] text-4xl md:text-5xl mb-6 font-extrabold">
@@ -127,8 +134,7 @@
             <!-- Servicio -->
             <div data-info="financiera"
                 class="servicio-card relative group bg-white w-56 p-6 rounded-xl shadow-md hover:-translate-y-2 transform transition cursor-pointer">
-                <img src="./img/compras.png" alt="Icono comercio exterior"
-                    class="w-16 h-16 mx-auto mb-4" />
+                <img src="./img/compras.png" alt="Icono comercio exterior" class="w-16 h-16 mx-auto mb-4" />
                 <p class="text-[#004182] font-bold">
                     GESTIÓN FINANCIERA Y LEGAL
                 </p>
@@ -136,8 +142,7 @@
 
             <div data-info="logistica"
                 class="servicio-card relative group bg-white w-56 p-6 rounded-xl shadow-md hover:-translate-y-2 transform transition cursor-pointer">
-                <img src="./img/mundo.png" alt="Icono logística integral"
-                    class="w-16 h-16 mx-auto mb-4" />
+                <img src="./img/mundo.png" alt="Icono logística integral" class="w-16 h-16 mx-auto mb-4" />
                 <p class="text-[#004182] font-bold">
                     TRANSPORTE Y LOGÍSTICA
                 </p>
@@ -145,8 +150,7 @@
 
             <div data-info="aduanas"
                 class="servicio-card relative group bg-white w-56 p-6 rounded-xl shadow-md hover:-translate-y-2 transform transition cursor-pointer">
-                <img src="./img/minicontenedor.png" alt="Icono consultoría financiera"
-                    class="w-16 h-16 mx-auto mb-4" />
+                <img src="./img/minicontenedor.png" alt="Icono consultoría financiera" class="w-16 h-16 mx-auto mb-4" />
                 <p class="text-[#004182] font-bold">
                     COMERCIO EXTERIOR Y ADUANAS
                 </p>
@@ -154,8 +158,7 @@
 
             <div data-info="distribucion"
                 class="servicio-card relative group bg-white w-56 p-6 rounded-xl shadow-md hover:-translate-y-2 transform transition cursor-pointer">
-                <img src="./img/diablito.png" alt="Icono marketing estratégico"
-                    class="w-16 h-16 mx-auto mb-4" />
+                <img src="./img/diablito.png" alt="Icono marketing estratégico" class="w-16 h-16 mx-auto mb-4" />
                 <p class="text-[#004182] font-bold">
                     COMERCIO Y DISTRIBUCIÓN
                 </p>
@@ -163,8 +166,7 @@
 
             <div data-info="marketing"
                 class="servicio-card relative group bg-white w-56 p-6 rounded-xl shadow-md hover:-translate-y-2 transform transition cursor-pointer">
-                <img src="./img/megafono.png" alt="Icono marketing estratégico"
-                    class="w-16 h-16 mx-auto mb-4" />
+                <img src="./img/megafono.png" alt="Icono marketing estratégico" class="w-16 h-16 mx-auto mb-4" />
                 <p class="text-[#004182] font-bold">
                     PUBLICIDAD Y MARKETING
                 </p>
@@ -172,8 +174,7 @@
 
             <div data-info="eventos"
                 class="servicio-card relative group bg-white w-56 p-6 rounded-xl shadow-md hover:-translate-y-2 transform transition cursor-pointer">
-                <img src="./img/grupo.png" alt="Icono marketing estratégico"
-                    class="w-16 h-16 mx-auto mb-4" />
+                <img src="./img/grupo.png" alt="Icono marketing estratégico" class="w-16 h-16 mx-auto mb-4" />
                 <p class="text-[#004182] font-bold">
                     EVENTOS Y RELACIONES PÚBLICAS
                 </p>
@@ -182,20 +183,38 @@
 
         <!-- Slider inferior dinámico -->
         <section id="slider-info"
-            class="mt-10 bg-white/40 rounded-2xl p-10 flex flex-wrap items-center gap-10 mx-auto transition-all duration-500 opacity-0 pointer-events-none max-w-6xl">
+            class="mt-10 bg-white/80 rounded-none p-6 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6 md:gap-10 w-full mx-auto transition-all duration-500 opacity-0 pointer-events-none shadow-md">
+
+            <!-- Botón Anterior -->
+            <button id="prev-btn"
+                class="flex items-center justify-center w-10 h-10 bg-[#004182] text-white rounded-full hover:bg-[#0066cc] transition mb-4 md:mb-0 order-3 md:order-none">
+                ⟵
+            </button>
+
+            <!-- Imagen -->
             <img id="slider-img" src="./img/puerquito.png" alt="Imagen"
-                class="w-full md:w-96 rounded-lg bg-[#dcefff]" />
-            <div class="flex-1 text-left">
-                <h3 id="slider-title" class="text-[#004182] text-2xl mb-4 font-semibold">
+                class="w-full md:w-[40%] max-w-sm rounded-lg bg-[#dcefff] object-cover order-1 md:order-none" />
+
+            <!-- Texto -->
+            <div class="flex-1 text-center md:text-left md:pr-12 order-2 md:order-none">
+                <h3 id="slider-title" class="text-[#004182] text-xl md:text-2xl mb-3 md:mb-4 font-semibold">
                     CONSULTORÍA FINANCIERA
                 </h3>
-                <p id="slider-text" class="text-gray-800 leading-relaxed">
+                <p id="slider-text" class="text-gray-800 leading-relaxed text-base md:text-xl">
                     Contamos con especialistas en asesoría financiera, administración de riesgos, evaluación de
                     inversiones y
                     desarrollo de estrategias de crecimiento para optimizar los recursos de tu empresa.
                 </p>
             </div>
+
+            <!-- Botón Siguiente -->
+            <button id="next-btn"
+                class="flex items-center justify-center w-10 h-10 bg-[#004182] text-white rounded-full hover:bg-[#0066cc] transition mt-4 md:mt-0 order-4 md:order-none">
+                ⟶
+            </button>
         </section>
+
+
     </section>
 
     <script>
@@ -204,8 +223,8 @@
                 title: "CONSULTORÍA FINANCIERA",
                 text: "Asesoría en comercio exterior, finanzas, estudios de mercado, representación legal y gestión de créditos empresariales.",
                 img: "./img/puerquito.png",
-                titleSize: "text-2xl", // 🔹 Tamaño del título
-                textSize: "text-xl", // 🔹 Tamaño del texto
+                titleSize: "text-2xl",
+                textSize: "text-xl",
             },
             logistica: {
                 title: "TRANSPORTE Y LOGÍSTICA",
@@ -244,33 +263,50 @@
             },
         };
 
+        const keys = Object.keys(infoData);
+        let currentIndex = 0;
+
         const servicioCards = document.querySelectorAll(".servicio-card");
         const slider = document.getElementById("slider-info");
         const title = document.getElementById("slider-title");
         const text = document.getElementById("slider-text");
         const img = document.getElementById("slider-img");
+        const prevBtn = document.getElementById("prev-btn");
+        const nextBtn = document.getElementById("next-btn");
 
-        servicioCards.forEach((card) => {
-            const key = card.dataset.info;
-            card.addEventListener("mouseenter", () => mostrarInfo(key));
-            card.addEventListener("click", () => mostrarInfo(key)); // Soporte móvil
+        servicioCards.forEach((card, index) => {
+            card.addEventListener("mouseenter", () => mostrarInfo(keys[index]));
+            card.addEventListener("click", () => mostrarInfo(keys[index]));
         });
 
         function mostrarInfo(key) {
             const info = infoData[key];
+            currentIndex = keys.indexOf(key);
+
             title.textContent = info.title;
             text.textContent = info.text;
             img.src = info.img;
 
-            // 🔹 Actualiza tamaño dinámicamente
             title.className = `text-[#004182] font-semibold mb-4 ${info.titleSize}`;
             text.className = `text-gray-800 leading-relaxed ${info.textSize}`;
 
-            // 🔹 Animación de aparición
             slider.classList.remove("opacity-0", "pointer-events-none");
             slider.classList.add("opacity-100");
         }
+
+        // Función para avanzar
+        nextBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex + 1) % keys.length;
+            mostrarInfo(keys[currentIndex]);
+        });
+
+        // Función para retroceder
+        prevBtn.addEventListener("click", () => {
+            currentIndex = (currentIndex - 1 + keys.length) % keys.length;
+            mostrarInfo(keys[currentIndex]);
+        });
     </script>
+
 
 
 
@@ -314,30 +350,33 @@
         </div>
     </section>
 
-    <!-- SECCIÓN: mapa + formulario -->
-    <section id="contacto" class="min-h-screen flex items-stretch">
+    <!-- SECCIÓN: Mapa + Formulario -->
+    <section id="contacto" class="flex flex-col lg:flex-row min-h-screen w-full">
+
         <!-- Columna Izquierda: Mapa -->
-        <div class="w-full lg:w-1/2 h-96 lg:h-auto relative">
-            <div id="map" class="absolute inset-0"></div>
-            <!-- control flotante para dirección (opcional) -->
+        <div class="w-full lg:w-1/2 h-80 sm:h-96 lg:h-auto relative">
+            <div id="map" class="absolute inset-0 rounded-none"></div>
+
+            <!-- Control flotante (dirección) -->
             <div class="absolute left-4 top-4 bg-white/80 backdrop-blur-sm rounded-md shadow-md p-3 z-20 max-w-xs">
                 <p class="text-sm font-semibold">Encuéntranos</p>
                 <p class="text-xs text-gray-700">Av. Ejemplo 123, Ciudad, País</p>
             </div>
         </div>
 
-        <!-- Columna Derecha: Formulario (sidebar) -->
-        <aside id="sidebar" class="w-full lg:w-1/2 relative flex items-center">
-            <!-- Capa azul semitransparente similar a la imagen -->
-            <div class="absolute inset-0 bg-blue-900/85"></div>
+        <!-- Columna Derecha: Formulario -->
+        <aside id="sidebar"
+            class="w-full lg:w-1/2 relative flex items-center justify-center bg-blue-900/85 text-white p-6 sm:p-10 lg:p-16">
 
-            <div class="relative z-10 w-full px-6 py-12 lg:py-20 lg:px-16 text-white">
-                <h3 class="text-2xl font-bold mb-4">TU ÉXITO ES NUESTRA MISIÓN</h3>
-                <p class="mb-6 text-sm opacity-90">Registra tus datos para contactar con nuestro equipo. Responderemos a
-                    la brevedad.</p>
+            <!-- Contenedor del formulario -->
+            <div class="relative z-10 w-full max-w-lg">
+                <h3 class="text-2xl sm:text-3xl font-bold mb-4 text-center lg:text-left">TU ÉXITO ES NUESTRA MISIÓN</h3>
+                <p class="mb-6 text-sm sm:text-base opacity-90 text-center lg:text-left">
+                    Registra tus datos para contactar con nuestro equipo. Responderemos a la brevedad.
+                </p>
 
-                <form id="clientForm" class="space-y-4" novalidate>
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <form id="clientForm" class="space-y-4 overflow-y-auto max-h-[70vh] sm:max-h-none" novalidate>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label for="nombre" class="block text-sm font-medium">Nombre completo</label>
                             <input id="nombre" name="nombre" required type="text"
@@ -354,7 +393,7 @@
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                         <div>
                             <label for="email" class="block text-sm font-medium">Correo electrónico</label>
                             <input id="email" name="email" required type="email"
@@ -372,24 +411,24 @@
                     </div>
 
                     <div>
-                        <label for="mensaje" class="block text-sm font-medium">Mensaje / Requerimiento</label>
+                        <label for="mensaje" class="block text-sm font-medium">¿En qué podemos ayudarte?</label>
                         <textarea id="mensaje" name="mensaje" rows="4"
-                            class="mt-1 block w-full rounded-md border border-transparent px-3 py-2 text-gray-900"
-                            placeholder="Cuéntanos en qué podemos ayudarte..."></textarea>
+                            class="mt-1 block w-full rounded-md border border-transparent px-3 py-2 text-gray-900 resize-none"
+                            placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
                     </div>
 
-                    <!-- Inputs ocultos para coordenadas seleccionadas en el mapa -->
+                    <!-- Inputs ocultos para coordenadas del mapa -->
                     <input type="hidden" id="lat" name="lat" />
                     <input type="hidden" id="lng" name="lng" />
 
-                    <div class="flex items-center gap-3">
+                    <div class="flex flex-col sm:flex-row sm:items-center gap-3 mt-4">
                         <button type="submit"
-                            class="inline-flex items-center justify-center px-5 py-3 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-md shadow">
+                            class="w-full sm:w-auto inline-flex items-center justify-center px-5 py-3 bg-cyan-400 hover:bg-cyan-500 text-gray-900 font-semibold rounded-md shadow transition">
                             Enviar registro
                         </button>
 
                         <button id="btnUseMapLocation" type="button"
-                            class="px-4 py-3 border border-white/20 rounded-md text-sm text-white/90 hover:bg-white/5">
+                            class="w-full sm:w-auto px-4 py-3 border border-white/20 rounded-md text-sm text-white/90 hover:bg-white/5 transition">
                             Usar mi ubicación en el mapa
                         </button>
                     </div>
@@ -400,37 +439,61 @@
         </aside>
     </section>
 
+
     <!-- FOOTER -->
-    <footer class="wave-bg bg-blue-500 text-white">
-        <div class="max-w-7xl mx-auto px-6 py-12">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-                <div>
-                    <!-- Logo simple -->
-                    <div class="flex items-center gap-3 mb-4">
-                        <div class="w-12 h-12 bg-white/20 rounded-full flex items-center justify-center font-bold">T
-                        </div>
-                        <div>
-                            <div class="font-bold">TRADELINK</div>
-                            <div class="text-xs opacity-90">Comercio • Logística • Consultoría</div>
-                        </div>
-                    </div>
-                    <p class="text-sm opacity-90">Soluciones integrales adaptadas a las necesidades de tu negocio.</p>
+    <footer class="relative bg-blue-500 text-white text-center">
+        <!-- Fondo tipo ola (puedes usar tu clase o una imagen SVG) -->
+        <div class="wave-bg bg-blue-500">
+            <div class="max-w-6xl mx-auto px-6 py-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
+
+                <!-- Columna Izquierda (Logo y dirección matriz) -->
+                <div class="flex flex-col items-center">
+                    <img src="./img/logo_tradelink.png" alt="Logo Tradelink" class="w-20 mb-2" />
+                    <p class="font-semibold text-sm">MATRIZ</p>
+                    <p class="text-xs opacity-90 leading-tight">Lunes - Viernes</p>
+                    <p class="text-xs opacity-90 mb-1">9:00 AM - 6:00 PM</p>
+                    <p class="text-xs leading-snug max-w-[180px]">
+                        Av. José López Portillo,<br>
+                        Pte. La Loma C.P 7815<br>
+                        Cancún Q. Roo
+                    </p>
                 </div>
 
-                <div class="text-sm">
-                    <h4 class="font-semibold mb-2">Contáctanos</h4>
-                    <p class="text-xs">Tel: +52 55 5555 5555</p>
-                    <p class="text-xs">Email: info@tradelink.com</p>
-                    <p class="text-xs mt-2">Av. Ejemplo 123, Ciudad, País</p>
+                <!-- Columna Central (ícono grande de ubicación o separador visual) -->
+                <div class="flex flex-col items-center justify-center space-y-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white opacity-90" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5 9 6.343 9 8s1.343 3 3 3zm0 0c-3.866 0-7 2.239-7 5v1h14v-1c0-2.761-3.134-5-7-5z" />
+                    </svg>
+                    <p class="font-semibold text-sm">OFICINAS</p>
+                    <p class="text-xs opacity-90 leading-tight">Atención personalizada</p>
+                    <p class="text-xs opacity-90">Soluciones integrales a tu medida</p>
                 </div>
 
-                <div class="text-sm">
-                    <h4 class="font-semibold mb-2">Horario</h4>
-                    <p class="text-xs">Lun - Vie: 9:00 - 18:00</p>
-                    <p class="text-xs">Sáb: 9:00 - 14:00</p>
-                    <p class="text-xs mt-2">&copy; <span id="year"></span> Tradelink. Todos los derechos reservados.</p>
+                <!-- Columna Derecha (Sucursal) -->
+                <div class="flex flex-col items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-white opacity-90 mb-1" fill="none"
+                        viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M12 11c1.657 0 3-1.343 3-3S13.657 5 12 5 9 6.343 9 8s1.343 3 3 3zm0 0c-3.866 0-7 2.239-7 5v1h14v-1c0-2.761-3.134-5-7-5z" />
+                    </svg>
+                    <p class="font-semibold text-sm">SUCURSAL</p>
+                    <p class="text-xs opacity-90 leading-tight">Lunes - Viernes</p>
+                    <p class="text-xs opacity-90 mb-1">9:00 AM - 6:00 PM</p>
+                    <p class="text-xs leading-snug max-w-[180px]">
+                        Boulevard Belisario Domínguez 3114<br>
+                        Fracc. Las Arboledas, C.P 29020,<br>
+                        Tuxtla Gutiérrez, Chiapas
+                    </p>
                 </div>
+
             </div>
+        </div>
+
+        <!-- Franja inferior -->
+        <div class="bg-blue-700 py-2 text-xs opacity-90">
+            © Derechos reservados | Aviso de privacidad | <span id="year"></span> Tradelink.com
         </div>
     </footer>
 
